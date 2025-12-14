@@ -6,11 +6,11 @@ link_libraries( son8::PROJECT_ )
 
 # Add tests ⮟ HERE ⮟ that should NOT use extra warning flags
 
+add_executable( msvc-__cplusplus msvc/__cplusplus.cxx )
+add_test( NAME msvc-__cplusplus COMMAND msvc-__cplusplus )
+
 if ( MSVC )
     add_compile_options( /W4 )
-
-    add_executable( msvc-__cplusplus msvc/__cpluplus.cxx )
-    add_test( NAME msvc-__cplusplus COMMAND msvc-__cplusplus )
 else( )
     add_compile_options( -Wall -Wextra -Wpedantic )
 endif( )
